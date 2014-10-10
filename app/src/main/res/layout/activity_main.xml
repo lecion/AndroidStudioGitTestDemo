@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <at.markushi.ui.RevealColorView
+            android:id="@+id/reveal_color_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#212121">
+
+        </at.markushi.ui.RevealColorView>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="64dp"
+            android:textSize="48sp"
+            android:textColor="@android:color/white"
+            android:text="Reveal Color View Demo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+
+            >
+
+            <Button
+                android:id="@+id/btn_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1"
+                android:background="@android:color/transparent"
+                android:tag="#8bc34a"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btn_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="2"
+                android:tag="#3f51b5"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btn_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="3"
+                android:tag="#00bcd4"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btn_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="4"
+                android:tag="#e91e63"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:text="@string/text_tv_bottom" />
+</LinearLayout>

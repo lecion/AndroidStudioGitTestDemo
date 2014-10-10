@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+sourceSets {
+    unitTest {
+        java.srcDir file('src/androidTest/java')
+        resources.srcDir file('src/androidTest/res')
+    }
+}
+
+configurations {
+    unitTestCompile.extendsFrom runtime
+    unitTestRuntime.extendsFrom unitTestCompile
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "com.lecion.demo"
+        minSdkVersion 14
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    repositories {
+        mavenCentral()
+    }
+    compile 'com.github.markushi:android-ui:1.2'
+    compile project(':libraries:UiLib')
+}
