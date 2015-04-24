@@ -1,1 +1,1 @@
-include ':app', ':libraries:UiLib'
+include ':frescodemo'
