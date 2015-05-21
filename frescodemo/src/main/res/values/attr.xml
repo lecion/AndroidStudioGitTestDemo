@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="first_color" format="color" />
+    <attr name="second_color" format="color" />
+    <attr name="position" format="enum">
+        <enum name="left" value="1" />
+        <enum name="rigth" value="2" />
+    </attr>
+
+    <declare-styleable name="MyStyle">
+        <attr name="first_color" />
+        <attr name="second_color" />
+        <attr name="position" />
+    </declare-styleable>
+
+</resources>

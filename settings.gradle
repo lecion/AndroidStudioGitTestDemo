@@ -1,1 +1,1 @@
-include ':frescodemo'
+include ':frescodemo', ':canvas'
