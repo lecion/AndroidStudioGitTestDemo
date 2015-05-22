@@ -1,1 +1,1 @@
-include ':frescodemo', ':canvas'
+include ':frescodemo', ':canvas', ':host', ':pluginone'

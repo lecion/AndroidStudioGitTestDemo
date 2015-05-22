@@ -1,0 +1,1 @@
+package com.yliec.host.comm;/** * Created by Lecion on 5/22/15. */public interface Comm {    int add(int a, int b);}

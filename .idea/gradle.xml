@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/canvas" />
             <option value="$PROJECT_DIR$/frescodemo" />
+            <option value="$PROJECT_DIR$/host" />
+            <option value="$PROJECT_DIR$/pluginone" />
           </set>
         </option>
       </GradleProjectSettings>
