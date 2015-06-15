@@ -10,6 +10,23 @@ import java.util.Map;
  */
 public abstract class Request<T> implements Comparable<Request<T>>{
 
+    public Request(String method, String url, RequestListener requestListener) {
+        this(url, method, false, requestListener);
+    }
+
+    public Request(String url, String method, boolean shouldCache, RequestListener requestListener) {
+        this(url, method, null, null, shouldCache, requestListener);
+    }
+
+    public Request(String url, String method, HashMap<String, String> headers, HashMap<String, String> params, boolean shouldCache, RequestListener requestListener) {
+        this.url = url;
+        this.method = method;
+        this.headers = headers;
+        this.params = params;
+        this.shouldCache = shouldCache;
+        this.requestListener = requestListener;
+    }
+
     /**
      * 请求方法
      */
