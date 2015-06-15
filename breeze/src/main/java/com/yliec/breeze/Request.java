@@ -1,6 +1,9 @@
 package com.yliec.breeze;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Lecion on 6/14/15.
@@ -127,6 +130,14 @@ public abstract class Request<T> implements Comparable<Request<T>>{
         return params;
     }
 
+    public byte[] getBody() {
+        Map<String, String> params = getParams();
+        if (params != null && params.size() > 0) {
+            return encodingParams(params, getParamsEncoding());
+        }
+        return null;
+    }
+
     public void setParams(HashMap<String, String> params) {
         this.params = params;
     }
@@ -167,6 +178,30 @@ public abstract class Request<T> implements Comparable<Request<T>>{
     public int compareTo(Request<T> another) {
         //优先级相等，按序列号排序，否则按优先级
         return this.priority == another.priority ? this.serialNum - another.serialNum : this.priority - another.priority;
+    }
+
+    protected String getParamsEncoding() {
+        return DEFUALT_PARAMS_ENCODING;
+    }
+
+    public String getBodyContentType() {
+        return "application/x-www-form-urlencoded; charset=" + getParamsEncoding();
+    }
+
+
+    private byte[] encodingParams(Map<String, String> params, String encoding) {
+        StringBuilder encoded = new StringBuilder();
+        try {
+            for (Map.Entry<String, String> entry : params.entrySet()) {
+                encoded.append(URLEncoder.encode(entry.getKey(), encoding));
+                encoded.append("=");
+                encoded.append(URLEncoder.encode(entry.getValue(), encoding));
+                encoded.append("&");
+            }
+            return encoded.toString().getBytes(encoding);
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("Encoding not supported: " + encoding, e);
+        }
     }
 
 }
