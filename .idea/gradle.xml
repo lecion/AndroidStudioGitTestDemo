@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/breeze" />
             <option value="$PROJECT_DIR$/canvas" />
             <option value="$PROJECT_DIR$/frescodemo" />
             <option value="$PROJECT_DIR$/host" />
