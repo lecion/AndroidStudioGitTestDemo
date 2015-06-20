@@ -221,4 +221,11 @@ public abstract class Request<T> implements Comparable<Request<T>>{
         }
     }
 
+    public boolean isShouldCache() {
+        return shouldCache;
+    }
+
+    public void setShouldCache(boolean shouldCache) {
+        this.shouldCache = shouldCache;
+    }
 }
