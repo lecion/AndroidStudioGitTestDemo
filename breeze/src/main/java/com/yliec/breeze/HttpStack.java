@@ -6,5 +6,5 @@ package com.yliec.breeze;
  * @Email lecion@icloud.com
  */
 public interface HttpStack {
-    Response performRequest(Request<?> request);
+    Response<?> performRequest(Request<?> request);
 }
